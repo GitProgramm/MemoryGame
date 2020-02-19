@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-function tableCreate(){
+function tableCreate(table){
     var e = document.getElementById("size");
     var n = e.options[e.selectedIndex].value;
  var body = document.body,
@@ -12,8 +12,12 @@ function tableCreate(){
  tbl.style.width='100px';
  tbl.style.border='1px solid black';
 
- document.getElementById("description").innerHTML = "n";
+ document.getElementById("description").innerHTML = n;
+ let thread=table.createThread();
+for(var i =0;i<n;i++){
+    for(var k=0;k<n;k++){
+        document.getElementById("table").innerHTML = "";
+    }
 }
-function test(){
-  alert("hu");  
 }
+
