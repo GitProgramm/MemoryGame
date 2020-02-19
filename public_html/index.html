@@ -9,11 +9,27 @@ and open the template in the editor.
         <title>MemoryGame</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <!-- <script src="Js/myJS.js"></script>-->
+       <script>
+      
+           function tableCreate(){
+             
+            var e = document.getElementById("size");
+            var n = e.options[e.selectedIndex].value;
+            var body = document.body,
+            tbl = document.createElement('table');
+            tbl.style.width='100px';
+            tbl.style.border='1px solid black';
+
+ document.getElementById("description").innerHTML = "n";
+}
+       </script>
     </head>
     <body>
         <div><h1>Memory game</h1></div>
-         <div class= "description">Learn Italian with our memory game!</div>
+        <div class= "description" id="description">Learn Italian with our memory game!</div>
          <div class= "size_class">
+             
              <p>Select the game size! </p>
              <select id="size">
                  <option value="4">4*4</option>
@@ -22,7 +38,9 @@ and open the template in the editor.
                  <option value="7">7*7</option>
                  <option value="8">8*8</option>
              </select>
+             <form>
              <button  onclick ="tableCreate()">Start</button>
+             </form>
          </div>
          <div class="game">
              <div class="table">
