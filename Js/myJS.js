@@ -12,11 +12,13 @@ function tableCreate(table){
  tbl.style.width='100px';
  tbl.style.border='1px solid black';
 
- document.getElementById("description").innerHTML = n;
- let thread=table.createThread();
+ 
 for(var i =0;i<n;i++){
+    let row=table.insertRow();
     for(var k=0;k<n;k++){
-        
+        let cell=row.insertCell();
+        let text="aaa"
+        cell.appendChild(text);
     }
 }
 }
