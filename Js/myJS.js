@@ -16,7 +16,7 @@ function tableCreate(table){
  let thread=table.createThread();
 for(var i =0;i<n;i++){
     for(var k=0;k<n;k++){
-        document.getElementById("table").innerHTML = "";
+        
     }
 }
 }
