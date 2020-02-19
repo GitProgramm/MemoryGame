@@ -24,6 +24,22 @@ and open the template in the editor.
 
  document.getElementById("description").innerHTML = "n";
 }
+
+/*select box code*/
+var colors = ['1abc9c', '2c3e50', '2980b9', '7f8c8d', 'f1c40f', 'd35400', '27ae60'];
+
+colors.each(function (color) {
+  $$('.color-picker')[0].insert(
+    '<div class="square" style="background: #' + color + '"></div>'
+  );
+});
+
+$$('.color-picker')[0].on('click', '.square', function(event, square) {
+  background = square.getStyle('background');
+  $$('.custom-dropdown select').each(function (dropdown) {
+    dropdown.setStyle({'background' : background});
+  });
+});
        </script>
 
         <link rel="stylesheet" href="css/style.css">
@@ -35,6 +51,7 @@ and open the template in the editor.
          <div class= "description bg-2 container-fluid">Learn Italian with our memory game!</div>
          <div class= "size_class bg-3 container-fluid">
              <p>Select the game size! </p>
+             <span class="custom-dropdown">
              <select id="size">
                  <option value="4">4*4</option>
                  <option value="5">5*5</option>
@@ -42,6 +59,7 @@ and open the template in the editor.
                  <option value="7">7*7</option>
                  <option value="8">8*8</option>
              </select>
+             </span>
              <br><button  class="button-1" onclick ="tableCreate()">Start</button>
          </div>
          <div class="game bg-2 text-center">
