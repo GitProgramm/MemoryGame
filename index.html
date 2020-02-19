@@ -11,41 +11,11 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
        <!-- <script src="Js/myJS.js"></script>-->
-       <script>
-      
-           function tableCreate(){
-             
-            var e = document.getElementById("size");
-            var n = e.options[e.selectedIndex].value;
-            var body = document.body,
-            tbl = document.createElement('table');
-            tbl.style.width='100px';
-            tbl.style.border='1px solid black';
-
- document.getElementById("description").innerHTML = "n";
-}
-
-/*select box code*/
-var colors = ['1abc9c', '2c3e50', '2980b9', '7f8c8d', 'f1c40f', 'd35400', '27ae60'];
-
-colors.each(function (color) {
-  $$('.color-picker')[0].insert(
-    '<div class="square" style="background: #' + color + '"></div>'
-  );
-});
-
-$$('.color-picker')[0].on('click', '.square', function(event, square) {
-  background = square.getStyle('background');
-  $$('.custom-dropdown select').each(function (dropdown) {
-    dropdown.setStyle({'background' : background});
-  });
-});
-       </script>
+       <script src="Js/myJS.js"></script>
 
         <link rel="stylesheet" href="css/style.css">
 
     </head>
-    <body>
     <body>
         <div class="container-fluid bg-1 text-center title"><h1>Memory game</h1></div>
          <div class= "description bg-2 container-fluid">Learn Italian with our memory game!</div>
@@ -63,8 +33,19 @@ $$('.color-picker')[0].on('click', '.square', function(event, square) {
              <br><button  class="button-1" onclick ="tableCreate()">Start</button>
          </div>
          <div class="game bg-2 text-center">
+             Game here
              <div class="table">
-                 Game here
+
+                 <table id="table">
+                     <tr>
+                         <th>head</th></tr>
+                     <tr>
+                         <td>cell</td>
+                         <td>cell</td>
+                         
+                     </tr>
+                     
+                 </table>
              </div>
              
              
