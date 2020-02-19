@@ -1,0 +1,38 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+
+body {
+    font: 20px Montserrat, sans-serif;
+    line-height: 1.8;
+    color: #467f58;
+}
+
+.bg-1 {
+    background-color: #dd9494; /* Pink */
+    color: #ffffff;
+}
+
+.bg-2 {
+    background-color: #cff1da; /* Light green */
+    color: #467f58;
+    padding-left: 10px;
+}
+
+.bg-3 {
+    background-color: #e7cdcd; /* Pink */
+    color: #ffffff;
+}
+
+.container-fluid {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 10px;
+  }
+  
+  .margin {
+      margin-bottom: 20px
+      
+  }
