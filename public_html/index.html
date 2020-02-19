@@ -6,12 +6,34 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>TODO supply a title</title>
+        <title>MemoryGame</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
+        <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
-        <div>TODO write content</div>
+        <div class="container-fluid bg-1 text-center"><h1>Memory game</h1></div>
+         <div class= "description margin bg-2">Learn Italian with our memory game!</div>
+         <div class= "size_class">
+             <p>Select the game size! </p>
+             <select id="size">
+                 <option value="4">4*4</option>
+                 <option value="5">5*5</option>
+                 <option value="6">6*6</option>
+                 <option value="7">7*7</option>
+                 <option value="8">8*8</option>
+             </select>
+             <button  onclick ="tableCreate()">Start</button>
+         </div>
+         <div class="game">
+             <div class="table">
+                 
+             </div>
+             
+             
+         </div> 
+         
+         
     </body>
+   
 </html>
