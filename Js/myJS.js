@@ -42,3 +42,4 @@ $$('.color-picker')[0].on('click', '.square', function(event, square) {
   });
 });
 
+/*text animation*/

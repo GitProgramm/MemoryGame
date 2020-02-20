@@ -27,6 +27,11 @@ body {
     color: #714955;
 }
 
+.container-top{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
 .container-fluid {
     padding-top: 20px;
     padding-bottom: 20px;
@@ -42,7 +47,7 @@ body {
   }
   
   .title {
-      font: 40px Verdana, sans-serif;
+      font: 30px Verdana, sans-serif;
   }
   
   .float-right{
