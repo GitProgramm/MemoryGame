@@ -14,13 +14,15 @@ function tableCreate(table){
 
  
 for(var i =0;i<n;i++){
-    let row=table.insertRow();
+    
+    let row=table.insertRow(i);
     for(var k=0;k<n;k++){
-        let cell=row.insertCell();
-        let text="aaa"
+        let cell=row.insertCell(k);
+        let text="aaa";
         cell.appendChild(text);
     }
 }
+
 }
 
 
