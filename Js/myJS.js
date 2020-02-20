@@ -4,25 +4,25 @@
  * and open the template in the editor.
  */
 
-function tableCreate(table){
+function tableCreate(){
     var e = document.getElementById("size");
     var n = e.options[e.selectedIndex].value;
  var body = document.body,
- tbl = document.createElement('table');
- tbl.style.width='100px';
+ tbl = document.getElementById("table");
+ tbl.innerHTML="";
+ tbl.style.width='100%';
  tbl.style.border='1px solid black';
 
  
 for(var i =0;i<n;i++){
-    
-    let row=table.insertRow(i);
+    var row = tbl.insertRow();
+    row.style.height='100px';
     for(var k=0;k<n;k++){
-        let cell=row.insertCell(k);
-        let text="aaa";
-        cell.appendChild(text);
+        var cell = row.insertCell();
+        cell.style.border = '1px solid black';
+        cell.setAttribute('onclick','alert();');
     }
 }
-
 }
 
 
