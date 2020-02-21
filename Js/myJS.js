@@ -5,7 +5,7 @@
  */
 var w = ["a","a","b","b"];
  var turns = 0, w1,w2;
-  var words=[];
+  var words=[];//
     function wordsFiller(words){
         var count =0;
         var e = document.getElementById("size");
