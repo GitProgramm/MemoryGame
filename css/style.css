@@ -153,10 +153,10 @@ table{
     width: 100%;
 }
 .selected{
-    background-color: red;
+    background-color: #3ec487;
 }
 .cell{
-    background-color: #3ec487;
+    background-color: #714955;
 }
 .guessed{
     background-color: gray;
