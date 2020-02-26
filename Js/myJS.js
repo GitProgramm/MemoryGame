@@ -6,10 +6,11 @@
 var w = ["accustom","abituare","receive","accogliere","realize","accorgersi","beat","battere","burn","bruciare","throw","buttare","hunt","cacciare","occur","capitare","charge","caricare","yield","cedere","declare","denunciare","intend","destinare","proclaim","dichiarare","fulfill","eseguire","expose","esporre","avoid","evitare","prohibit","impedire","engage","impegnare"];
  var turns = 0, w1,w2;
   var words=[];
+var n,e;
     function wordsFiller(words){
         var count =0;
-        var e = document.getElementById("size");
-    var n = e.options[e.selectedIndex].value;
+         e = document.getElementById("size");
+     n = e.options[e.selectedIndex].value;
         for(let i=0;i<n*n;i++){
             if(i%2===0){
                 words[i]="E"+count;
@@ -22,8 +23,8 @@ var w = ["accustom","abituare","receive","accogliere","realize","accorgersi","be
     }
 function tableCreate(){
     var counter = 0;
-    var e = document.getElementById("size");
-    var n = e.options[e.selectedIndex].value;
+   // var e = document.getElementById("size");
+   // var n = e.options[e.selectedIndex].value;
  var body = document.body,
  tbl = document.getElementById("table");
  tbl.innerHTML="";
@@ -42,18 +43,18 @@ for(var i =0;i<n;i++){
 }
 function turn(k){
     turns++;
-    let n;
+    let g;
     let name=String(k);
     let cell = document.getElementById(k);
     cell.setAttribute('class','selected');
     if(name.substr(0,1)==="E"){
-        n=(name.substring(1,name.length)*2);
+        g=(name.substring(1,name.length)*2);
         
     }else{
-        n=(name.substring(1,name.length)*2)+1;
+        g=(name.substring(1,name.length)*2)+1;
     }
-    cell.innerHTML = w[n];
-    console.log(n);
+    cell.innerHTML = w[g];
+    console.log(g);
     if(turns%2!==0){
          w1=k;
          cell.removeAttribute('onclick');
@@ -74,6 +75,7 @@ function check(w1,w2){
                 c2.removeAttribute('onclick');
                 setTimeout(()=>(c1.setAttribute('class','guessed'),
                 c2.setAttribute('class','guessed')),500); 
+                victory();
             }
         }  
     }
@@ -81,6 +83,16 @@ function check(w1,w2){
         c1.setAttribute('onclick','turn(this.id);');
         setTimeout(()=>reset(),500);  
     }
+}
+function victory(){
+      let m = document.getElementsByClassName("guessed");
+      console.log(m);
+      console.log("gar=" +m.length);
+      if(m.length===(n*n)-2){
+          document.getElementById("endScreen").style.display='inline';
+          console.log("W");
+      }
+    
 }
 function reset(){
     var c1 =document.getElementById(w1), c2 = document.getElementById(w2); 
@@ -90,8 +102,8 @@ function reset(){
         c2.setAttribute('class','cell');
 }
 function shuffle(array) {
-    var e = document.getElementById("size");
-    var n = e.options[e.selectedIndex].value;
+    //var e = document.getElementById("size");
+    //var n = e.options[e.selectedIndex].value;
   var currentIndex = n*n, temporaryValue, randomIndex;
 
   while (currentIndex !== 0) {

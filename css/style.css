@@ -161,3 +161,19 @@ table{
 .guessed{
     background-color: gray;
 }
+.victory{
+    box-sizing: border-box;
+    text-align: center;
+    z-index: 1000;
+    position: absolute;
+    padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    color: black;
+    max-width: 400px;
+    border:1px solid black;
+    background-color: white;
+    left: 0;
+    right: 0;
+}
