@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  *///
-var w = ["accustom","abituare","receive","accogliere","realize","accorgersi","beat","battere","burn","bruciare","throw","buttare","hunt","cacciare","occur","capitare","charge","caricare","yield","cedere","declare","denunciare","intend","destinare","proclaim","dichiarare","fulfill","eseguire","expose","esporre","avoid","evitare","prohibit","impedire","engage","impegnare"];
+var w = ["accustom","abituare","welcome","accogliere","realize","accorgersi","beat","battere","burn","bruciare","throw","buttare","hunt","cacciare","occur","capitare","charge","caricare","yield","cedere","declare","denunciare","intend","destinare","proclaim","dichiarare","fulfill","eseguire","expose","esporre","avoid","evitare","prohibit","impedire","engage","impegnare"];
  var turns = 0, w1,w2;
   var words=[];
     function wordsFiller(words){
