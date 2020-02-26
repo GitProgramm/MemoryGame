@@ -8,7 +8,7 @@ body {
     font: 20px Verdana, sans-serif;
     background-color: #563640;
     line-height: 1.8;
-    color: #88bb92;
+    color: #88bb92; 
 }
 
 .bg-1 {
@@ -19,7 +19,6 @@ body {
 .bg-2 {
     background-color: #a0ecd0; /* Light green */
     color: #3e3e3e;
-    padding-left: 10px;
 }
 
 .bg-3 {
@@ -30,20 +29,33 @@ body {
 .container-top{
     padding-top: 10px;
     padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .container-fluid {
     padding-top: 20px;
     padding-bottom: 20px;
     padding-left: 10px;
+    padding-right: 10px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
   }
+  
+ 
   
   .text-center {
       text-align: center;
   }
   
-  .center{
-     
+  .game{
+      min-height: 49vh;
   }
   
   .title {
@@ -78,9 +90,6 @@ body {
       
   }
   
-  .margin-right{
-      margin-right: 10px;
-  }
   
   /*custom dropdown*/
   
@@ -156,6 +165,7 @@ table{
     width: 60%;
     margin-left: auto;
     margin-right: auto;
+    
 }
 .selected{
     background-color: #3ec487;
