@@ -29,10 +29,15 @@ and open the template in the editor.
                  
              </select>
              </span>
-             <button  class="button-1" onclick ="wordsFiller(words)">Start</button>
+             <button  class="button-1" id="poga" onclick ="wordsFiller(words,0,0)">Start</button>
+             <button  class="button-1" id="poga1" onclick ="victory(true)">cheat</button>
          </div>
         <div class="victory" id="endScreen" style="display: none">
-            <br>Wictory! Congratulations!<br>Vittoria! Congratulazioni!<br>Try it once more!
+            <br>Wictory! Congratulations!<br>Vittoria! Congratulazioni!<br>Moves: <var id="skaits"></var> Time: <var id="time"></var> seconds<br>Try it once more!<br>
+            
+            <button class = "button-1" onclick="wordsFiller(words,2,0)">2x2</button>
+            <button class = "button-1" onclick="wordsFiller(words,4,1)">4x4</button>
+            <button class = "button-1" onclick="wordsFiller(words,6,2)">6x6</button>
         
         
         

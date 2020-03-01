@@ -6,11 +6,19 @@
 var w = ["accustom","abituare","welcome","accogliere","realize","accorgersi","beat","battere","burn","bruciare","throw","buttare","hunt","cacciare","occur","capitare","charge","caricare","yield","cedere","declare","denunciare","intend","destinare","proclaim","dichiarare","fulfill","eseguire","expose","esporre","avoid","evitare","prohibit","impedire","engage","impegnare"];
  var turns = 0, w1,w2;
   var words=[];
-var n,e;
-    function wordsFiller(words){
+  var d = new Date();
+var n,e,pause=false,t1=d.getTime(),t2=0;
+    function wordsFiller(words, sk,index){
+        
+        document.getElementById("poga").disabled=false;
+        document.getElementById("endScreen").style.display='none';
         var count =0;
          e = document.getElementById("size");
      n = e.options[e.selectedIndex].value;
+     if(sk!==0){
+         n=sk;
+         document.getElementById("size").selectedIndex=index;
+     }
         for(let i=0;i<n*n;i++){
             if(i%2===0){
                 words[i]="E"+count;
@@ -23,8 +31,7 @@ var n,e;
     }
 function tableCreate(){
     var counter = 0;
-   // var e = document.getElementById("size");
-   // var n = e.options[e.selectedIndex].value;
+    turns=0;
  var body = document.body,
  tbl = document.getElementById("table");
  tbl.innerHTML="";
@@ -40,8 +47,16 @@ for(var i =0;i<n;i++){
         counter++;
     }
 }
+var rect = document.getElementById("table").getBoundingClientRect();
+          window.scrollTo(rect.left, rect.top);
 }
 function turn(k){
+    if(pause===false){
+        if(turns===0){
+            d = new Date();
+          t1= d.getTime();
+        }
+        pause = true;
     turns++;
     let g;
     let name=String(k);
@@ -58,10 +73,12 @@ function turn(k){
     if(turns%2!==0){
          w1=k;
          cell.removeAttribute('onclick');
+         pause=false;
     }else{
          w2=k;
         check(w1,w2);       
     }
+}
 }
 function check(w1,w2){
     var l1=w1.length;var l2=w2.length;
@@ -74,8 +91,10 @@ function check(w1,w2){
                 c1.removeAttribute('onclick');
                 c2.removeAttribute('onclick');
                 setTimeout(()=>(c1.setAttribute('class','guessed'),
-                c2.setAttribute('class','guessed')),500); 
-                victory();
+                c2.setAttribute('class','guessed'),pause=false),500); 
+                victory(false);
+                
+                
             }
         }  
     }
@@ -84,13 +103,34 @@ function check(w1,w2){
         setTimeout(()=>reset(),500);  
     }
 }
-function victory(){
+function victory(t){
+    let d = new Date();
+    if(t===true){document.getElementById("endScreen").style.display='inline';
+          document.getElementById("poga").disabled = true;
+          var rect = document.getElementById("endScreen").getBoundingClientRect();
+          window.scrollTo(rect.left, rect.top);
+          console.log(rect.left, rect.bottom);
+          document.getElementById("skaits").innerHTML=turns;
+          t2=d.getTime();
+          let time =(t2-t1)/1000;
+          if(turns===0){
+              time=0;
+          }
+          document.getElementById("time").innerHTML=time;
+          pause=false;}
       let m = document.getElementsByClassName("guessed");
       console.log(m);
       console.log("gar=" +m.length);
       if(m.length===(n*n)-2){
           document.getElementById("endScreen").style.display='inline';
-          console.log("W");
+          var rect = document.getElementById("endScreen").getBoundingClientRect();
+          window.scrollTo(rect.left, rect.top);
+          document.getElementById("poga").disabled = true;
+          document.getElementById("skaits").innerHTML=turns;
+          t2=d.getTime();
+          let time =(t2-t1)/1000;
+          document.getElementById("time").innerHTML=time;
+          pause=false;
       }
     
 }
@@ -100,10 +140,9 @@ function reset(){
         c2.innerHTML="";
         c1.setAttribute('class','cell');
         c2.setAttribute('class','cell');
+        pause=false;
 }
 function shuffle(array) {
-    //var e = document.getElementById("size");
-    //var n = e.options[e.selectedIndex].value;
   var currentIndex = n*n, temporaryValue, randomIndex;
 
   while (currentIndex !== 0) {

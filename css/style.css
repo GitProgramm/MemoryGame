@@ -181,6 +181,7 @@ table{
     text-align: center;
     z-index: 1000;
     position: absolute;
+    margin-top: -100px;
     padding: 20px;
     margin-left: auto;
     margin-right: auto;
