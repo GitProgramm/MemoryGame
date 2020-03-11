@@ -12,7 +12,7 @@ var n,e,pause=false,t1=d.getTime(),t2=0;
         
         document.getElementById("poga").disabled=false;
         document.getElementById("endScreen").style.display='none';
-        var count =0;
+        var count =Math.floor(Math.random() * 18);
          e = document.getElementById("size");
      n = e.options[e.selectedIndex].value;
      if(sk!==0){
@@ -24,7 +24,11 @@ var n,e,pause=false,t1=d.getTime(),t2=0;
                 words[i]="E"+count;
             }else{
                 words[i]="I"+count;
-                count++;
+                if(count<17){
+                    count++;
+                }
+                else if(count===17){
+                    count=0;}
             }
         }
         shuffle(words);
